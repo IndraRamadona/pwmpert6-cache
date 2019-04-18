@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Indra</title>
+	<meta name="description" content="indra"/>
+	<!--viewport digunakan untuk menyesuaikan tampilan layar yang ditampilkan diberbagai resolusi di semua perangkat 
+	sehingga layar yang di tampilkan di layar resoluinya akan menyesuaikan pada layar yang digunakan, misalnya pada mobile dan desktop-->
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+	<!-- pada baris dibawah mengambil dari link untuk menyesuaikan font yang digunakan pada type css yang digunakan	-->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<!-- Navigasi yang digunakan untuk menampilkan navigasi padaclas navigasi-->
+	<nav class="teal lighten-1" role="navigation">
+	<div class="nav-wrapper container">
+	<a href="#" class="brand-logo" id="logo-container">Indra Ramadona</a>
+	<a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a>
+	
+	<ul class="topnav right hide-on-med-and-down"></ul>
+	<ul class="sidenav" id="nav-mobile"></ul>
+	</div>
+	</nav>
+	<!-- Navigasi akhir yang dimana pada class container dengan id body-content  -->
+	<div class="container" id="body-content"></div>
+	<!-- Baris dibawah menggunakan script dari materialize -->
+	<script src="js/materialize.min.js"></script>
+	<script src="js/nav.js"></script>
+	
+	<p>
+	<!-- pada bagian ini dijelaskan bahwa jika navigasti di dalam console.og tersebut supported maka 
+		navigsi pada indra-sw.js akan menregister, -->
+	<script>
+		if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('indra-sw.js)
+		.then(function(registration) {
+		console.log('Registered:', registration);
+		})
+		.catch(function(error) {
+		console.log('Registration failed: ', error);
+		});
+		}
+   </script>
+	</p>
+</body>
+</html>
